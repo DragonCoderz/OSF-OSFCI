@@ -187,6 +187,7 @@ function run_ci(servername, RemainingSecond) {
 	$('#features').css("display","none");
 	$('#help').css("display","none");
 	$('#dropdown').css("display","none");
+	$('#download_key_button').css("display","none");
 
 
 	// We must add an input field into the navbar to gather the github Token entry
@@ -922,6 +923,10 @@ function mainpage(){
 	loadHTML("html/navbar.html");
 	loadJS("js/navbar.js");
 	navbarHover();
+	if (mylocalStorage['privKeyInfoAck'] != 1) {
+		popUp()
+	}
+
 	loginBtn();
 	loadHTML("html/home.html");
 	$('#background').css('background-image', 'url(images/landing.png)').fadeIn(3000);
