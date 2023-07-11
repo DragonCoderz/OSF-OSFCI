@@ -72,7 +72,6 @@ function loginBtn() {
 				clearDocument();
 				loadHTML("html/navbar.html");
 				loadJS("js/navbar.js");
-				// navbarHover();
 				loginBtn();
 		       		$(document.body).append("<center><h1>Welcome Back !</h1><center>");
 			       	loadHTML("html/loginForm.html");
