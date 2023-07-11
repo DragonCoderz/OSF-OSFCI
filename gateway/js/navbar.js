@@ -84,10 +84,6 @@ function loginBtn() {
 		}
 	});
 
-	$('#MyAccount').on('click', function(e) {
-		myAccount();
-	});
-
 	// We must check if we are logged in or not ?
 	// and replace the button text
 	if ( typeof(mylocalStorage) !== 'undefined' ) {
@@ -99,6 +95,9 @@ function loginBtn() {
 			$("#dropdownMaster").append(dropdownCodeToInsert);
 			$('#navbarDropdownMenuLink').html(mylocalStorage['username']);
 			navbarHover()
+			$('#MyAccount').on('click', function(e) {
+				myAccount();
+			});
 			get_server_models_for_dropdown()
 		}
 		else {
