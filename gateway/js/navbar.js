@@ -99,6 +99,7 @@ function loginBtn() {
 			$("#dropdownMaster").append(dropdownCodeToInsert);
 			$('#navbarDropdownMenuLink').html(mylocalStorage['username']);
 			navbarHover()
+			get_server_models_for_dropdown()
 		}
 		else {
 			console.log("Error with html text insertion");
@@ -127,23 +128,25 @@ function enableDisableToolTip() {
 
 // We have to build the navbar production option
 
-$.ajax({
-	type: "GET",
-	contentType: 'application/json',
-	url: window.location.origin + '/ci/get_server_models/',
-	success: function(response){
-			var obj = JSON.parse(response);
-			var htmlcode = "";
-			obj.forEach(function(item) {
-				htmlcode = htmlcode + '<li><a class="dropdown-item" id="'+item.Product+'">' + item.Product + '</a></li>';
-			});
-			$('#menuSecondary').html(htmlcode);
-			obj.forEach(function(item) {
-				$('#'+item.Product).on('click', function(e) {
-  				      InteractiveSession(item.Product);
+function get_server_models_for_dropdown() {
+	$.ajax({
+		type: "GET",
+		contentType: 'application/json',
+		url: window.location.origin + '/ci/get_server_models/',
+		success: function(response){
+				var obj = JSON.parse(response);
+				var htmlcode = "";
+				obj.forEach(function(item) {
+					htmlcode = htmlcode + '<li><a class="dropdown-item" id="'+item.Product+'">' + item.Product + '</a></li>';
 				});
-			});
-	}
-});
+				$('#menuSecondary').html(htmlcode);
+				obj.forEach(function(item) {
+					$('#'+item.Product).on('click', function(e) {
+						InteractiveSession(item.Product);
+					});
+				});
+		}
+	});
+}
 
 
