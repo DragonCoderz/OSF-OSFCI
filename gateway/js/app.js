@@ -129,7 +129,6 @@ function start_ci(machine) {
         clearDocument();
         loadHTML("html/navbar.html");
         loadJS("js/navbar.js");
-        // navbarHover();
         loginBtn();
 
 	// We request a test node to the gateway
@@ -871,7 +870,6 @@ function myAccount()
 	clearDocument();
 	loadHTML("html/navbar.html");
         loadJS("js/navbar.js");
-	// navbarHover();
 	loginBtn();
 
 	// We must put in place the layout here and allow various entries to be available
@@ -921,7 +919,6 @@ function mainpage(){
 	// Must load the default home page
 	loadHTML("html/navbar.html");
 	loadJS("js/navbar.js");
-	// navbarHover();
 	loginBtn();
 	loadHTML("html/home.html");
 	$('#background').css('background-image', 'url(images/landing.png)').fadeIn(3000);
@@ -959,7 +956,6 @@ function main(){
 		clearDocument();
 		loadHTML("html/navbar.html");
 		loadJS("js/navbar.js");
-		// navbarHover();
 		loginBtn();
                 $(document.body).append("<center><h1>Welcome Back !</h1></center>");
 		loadHTML("html/loginForm.html");
@@ -984,7 +980,6 @@ function main(){
 			clearDocument();
                         loadHTML("html/navbar.html");
                         loadJS("js/navbar.js");
-                        // navbarHover();
                         loginBtn();
                         $(document.body).append("<center><h1>Welcome Back !</h1><center>");
                         loadHTML("html/resetPassword.html");
@@ -1017,7 +1012,6 @@ function main(){
 			clearDocument();
 			loadHTML("html/navbar.html");
 			loadJS("js/navbar.js");
-			// navbarHover();
 			loginBtn();
 			loadHTML("html/home.html");
 			$('#background').css('background-image', 'url(images/landing.png)').fadeIn(3000);
