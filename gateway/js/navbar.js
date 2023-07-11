@@ -72,7 +72,7 @@ function loginBtn() {
 				clearDocument();
 				loadHTML("html/navbar.html");
 				loadJS("js/navbar.js");
-				navbarHover();
+				// navbarHover();
 				loginBtn();
 		       		$(document.body).append("<center><h1>Welcome Back !</h1><center>");
 			       	loadHTML("html/loginForm.html");
@@ -90,19 +90,20 @@ function loginBtn() {
 
 	// We must check if we are logged in or not ?
 	// and replace the button text
-	if ( typeof(mylocalStorage) !== 'undefined' )
-	if (( "string" === typeof(mylocalStorage['secretKey']) ) & ( "string" === typeof(mylocalStorage['accessKey']) ))
-	{
-	        // we must change the login button by a Disconnect button
-	        $('#loginNavbar').html('Logout');
-		// The navBar title must be the login name
-		$("#dropdownMaster").append(dropdownCodeToInsert);
-		$('#navbarDropdownMenuLink').html(mylocalStorage['username']);
-	}
-	else {
-		console.log("Error with html text insertion");
-	}
-		
+	if ( typeof(mylocalStorage) !== 'undefined' ) {
+		if (( "string" === typeof(mylocalStorage['secretKey']) ) & ( "string" === typeof(mylocalStorage['accessKey']) ))
+		{
+			// we must change the login button by a Disconnect button
+			$('#loginNavbar').html('Logout');
+			// The navBar title must be the login name
+			$("#dropdownMaster").append(dropdownCodeToInsert);
+			$('#navbarDropdownMenuLink').html(mylocalStorage['username']);
+			navbarHover()
+		}
+		else {
+			console.log("Error with html text insertion");
+		}
+	}	
 }
 
 $("#Home").on("click", function(event) {
